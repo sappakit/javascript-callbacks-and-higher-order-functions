@@ -1,20 +1,16 @@
-// Exercise #1: For Each Function
-
 function forEach(array, operation) {
-  // Start coding here
-  for (let eachSalary of array) {
-    newEmployeeSalaries.push(operation(eachSalary));
+  for (let item of array) {
+    newEmployeeSalaries.push(operation(item)); //(item) คืออากิวเมนต์ของ salary
   }
 }
 
-function addBonus(eachSalary) {
-  return (eachSalary += 5000);
+function incrementSalary(salary) {
+  //Callback function
+  return salary + 5000;
 }
 
-const employeeSalaries = [20005, 40000, 32000, 14500, 344000];
-const newEmployeeSalaries = [];
+const employeeSalaries = [20005, 40000, 32000, 14500, 344000]; // เพื่อส่งค่าไปที่ พารามิเตอร์ array
+const newEmployeeSalaries = []; // เพื่อเก็บค่าหลังจาก Assign
 
-// Using `forEach` function here
-
-forEach(employeeSalaries, addBonus);
+forEach(employeeSalaries, incrementSalary); // อากิวเมนต์ของ array,operation
 console.log(newEmployeeSalaries); // [25005, 45000, 37000, 19500, 349000]
